@@ -11,9 +11,9 @@ ThirdNumberReturn(326790);
 
 Console.WriteLine("\nЗадание 3\n");
 
-// IsWeekend(6);
-// IsWeekend(7);
-// IsWeekEnd(1);
+IsWeekend(6);
+IsWeekend(7);
+IsWeekend(1);
 
 
 
@@ -37,14 +37,23 @@ int[] ThirdNumberReturn(int n)
         Console.WriteLine("Третьей цифры нет");
         return new int[0];
     }
-
     fromLeft = (n % 10000) / 1000;
     fromRight = (n % 100) / 10;
 
     Console.WriteLine("Третья цифра с начала: " + fromLeft);
     Console.WriteLine("Третья цифра с конца: " + fromRight);
 
-
-
     return new int[] {fromLeft, fromRight};
+}
+
+bool IsWeekend(int n) 
+{
+    if (n < 6)
+    {
+        Console.WriteLine("Будний день");
+        return false;
+    }
+
+    Console.WriteLine("Выходной");
+    return true;
 }
